@@ -1,0 +1,25 @@
+{
+    "Nome": "Flavio Alvim Guimaraes",
+    "CRM": "CRM 5264383-1",
+    "Enderecos": [
+        {
+            "Logradouro": "Av. Henrique Dodsworth",
+            "Numero": 13,
+            "Complemento": "Ap. 702",
+            "Bairro": "Copacabana",
+            "Cidade": "Rio de Janeiro",
+            "Estado": "RJ",
+            "CEP": "22061-030"
+        }
+    ],
+    "Modelos": {
+        "Prescricao": "<p class='ql-align-center'><strong>Dr.Flavio Alvim Guimaraes</strong></p><p class='ql-align-center'><strong>Médico</strong></p><p class='ql-align-center'><strong>CRM 5264383-1</strong></p><p class='ql-align-center'><strong>CPF 021.829.067-54</strong></p><p class='ql-align-center'><br></p><p class='ql-align-center'><br></p><p class='ql-align-center'><br></p><p class='ql-align-center'><br></p><p class='ql-align-center'><br></p><p class='ql-align-center'><br></p><p class='ql-align-center'><br></p><p class='ql-align-center'><br></p><p class='ql-align-center'><br></p><p class='ql-align-center'><br></p><p class='ql-align-center'><br></p><p class='ql-align-center'><br></p><p class='ql-align-center'>_____________________________________________________________________________________________</p><p class='ql-align-center'>Av. Afranio de Melo Franco 141- Sala 409 - Leblon - Tel. (21) 99221-8007 - email: consultorio.flavioalvim@gmail.com</p>",
+        "Exame": ""
+    },
+    "Prescricoes": [
+        {
+            "DateTime": "",
+            "rawEditorState": ""
+        }
+    ]
+}
