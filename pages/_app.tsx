@@ -12,11 +12,22 @@ import "styles/background.css";
 import {
   applyPolyfills,
   defineCustomElements,
-} from "open-heal-web-components/loader";
+} from "open-heal-components/loader";
+
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      "link-button": React.DetailedHTMLProps<
+        React.HTMLAttributes<HTMLElement>,
+        HTMLElement
+      >;
+    }
+  }
+}
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   applyPolyfills().then(() => {
-    defineCustomElements(window);
+    defineCustomElements();
   });
 
   const router = useRouter();
