@@ -1,5 +1,5 @@
 import React from "react";
-import * as Styled from "../stories/Button.styled";
+import * as Styled from "./Button.styled";
 
 interface ButtonProps {
   /**
