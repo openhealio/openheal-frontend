@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import * as Styled from "./RoundButton.styles";
+import * as Styled from "./RoundButton.style";
 
 export enum RoundButtonTypeEnum {
   PRIMARY = "bg-black text-white",
