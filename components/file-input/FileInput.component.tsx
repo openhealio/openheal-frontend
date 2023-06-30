@@ -1,12 +1,19 @@
-import { useCallback, useState } from "react";
-import { useDropzone, DropzoneState } from "react-dropzone";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
+import CloudUploadIcon from "@mui/icons-material/CloudUpload";
+import UploadFileIcon from "@mui/icons-material/UploadFile";
+import Context from "context/Context";
+import { useCallback, useContext, useState } from "react";
+import { DropzoneState, useDropzone } from "react-dropzone";
 import * as Styled from "./FileInput.style";
 
-interface FileInputProps {}
+interface FileInputProps {
+  fieldName: string;
+  onChangeFile: (file: File) => void;
+}
 
 interface InputProps {
   dropzone: DropzoneState;
+  fieldName: string;
 }
 
 interface HasFileProps {
@@ -14,7 +21,7 @@ interface HasFileProps {
   removeFile: () => void;
 }
 
-export const FileInput = () => {
+export const FileInput = ({ fieldName, onChangeFile }: FileInputProps) => {
   const [file, setFile] = useState<File | null>(null);
 
   const removeFile = useCallback(() => {
@@ -22,7 +29,9 @@ export const FileInput = () => {
   }, [file]);
 
   const onDrop = useCallback((files: File[]) => {
-    setFile(files[0]);
+    const newFile = files[0];
+    setFile(newFile);
+    onChangeFile(newFile);
   }, []);
 
   const dropzone = useDropzone({
@@ -34,10 +43,11 @@ export const FileInput = () => {
 
   if (file) return <HasFile file={file} removeFile={removeFile} />;
 
-  return <Input dropzone={dropzone} />;
+  return <Input dropzone={dropzone} fieldName={fieldName} />;
 };
 
-const Input = ({ dropzone }: InputProps) => {
+const Input = ({ fieldName, dropzone }: InputProps) => {
+  const { register } = useContext(Context);
   const { getRootProps, getInputProps, isDragActive } = dropzone;
 
   return (
@@ -45,7 +55,7 @@ const Input = ({ dropzone }: InputProps) => {
       <div
         {...getRootProps()}
         className={`
-          h-full 
+        h-full 
           rounded-lg 
           border-dashed 
           border-4 
@@ -70,14 +80,14 @@ const Input = ({ dropzone }: InputProps) => {
               h-full
             "
           >
-            {/* <div
-              className={`
-                UploadIcon 
+            <CloudUploadIcon
+              fontSize="large"
+              className={` 
                 w-10 h-10 
                 mb-3 
                 ${isDragActive ? "text-blue-500" : "text-gray-400"}
               `}
-            ></div> */}
+            />
             {isDragActive ? (
               <p className="font-bold text-lg text-blue-400">
                 Solte para adicionar
@@ -93,7 +103,11 @@ const Input = ({ dropzone }: InputProps) => {
             )}
           </div>
         </label>
-        <input {...getInputProps()} className="hidden" />
+        <input
+          {...getInputProps()}
+          {...register(fieldName)}
+          className="hidden"
+        />
       </div>
     </Styled.FileInputWrapper>
   );
@@ -104,35 +118,35 @@ const HasFile = ({ file, removeFile }: HasFileProps) => {
     <Styled.FileInputWrapper>
       <div
         className="
-      h-full 
-      rounded-lg 
-      border-dashed 
-      border-4 
-      border-gray-600 
-      bg-gray-700 
-      flex 
-      justify-center 
-      items-center"
+          h-full 
+          rounded-lg 
+          border-dashed 
+          border-4 
+          border-gray-600 
+          bg-gray-700 
+          flex 
+          justify-center 
+          items-center
+        "
       >
         <div
           className="
-        bg-white  
-          rounded-md 
-          shadow-md 
-          flex 
-          gap-3 
-          items-center 
-          justify-center"
+          bg-white  
+            rounded-md 
+            shadow-md 
+            flex 
+            gap-3 
+            items-center 
+            justify-center
+          "
         >
-          {/* <FileIcon className="w-5 h-5 my-4 ml-4" /> */}
-          <span className="text-sm text-gray-500 my-4 ml-4">{file?.name}</span>
-          <button
-            type="button"
-            className="place-self-start"
+          <UploadFileIcon className="w-5 h-5 my-4 ml-4" />
+          <span className="text-sm text-gray-500 my-4 mx-4">{file?.name}</span>
+          <CloseRoundedIcon
+            fontSize="small"
+            className="self-start cursor-pointer"
             onClick={removeFile}
-          >
-            <CloseRoundedIcon fontSize="small" />
-          </button>
+          />
         </div>
       </div>
     </Styled.FileInputWrapper>
