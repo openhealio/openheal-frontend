@@ -4,6 +4,9 @@ import P from "components/Styling/P";
 import Card from "components/Styling/Card";
 import AdSense from "components/AdSense";
 
+import { RoundButton } from "./round-button/RoundButton.component";
+
+
 export default function LandingPage() {
   return (
     <>
@@ -12,75 +15,71 @@ export default function LandingPage() {
           <Card className="h-48">
             <AdSense />
           </Card>
-          <div className="mb-8">
-            <H2 className="pb-10">OpenHeal: Soluções OpenSource para saúde.</H2>
-            <P>
-              A OpenHeal é um projeto inovador e colaborativo que tem como
-              objetivo criar soluções de saúde acessíveis e de alta qualidade
-              por meio de tecnologia opensource.
-            </P>
-            <P>
-              Trabalharemos em varios projetos para fornecer soluções inovadoras
-              em diversas áreas da saúde.
-            </P>
-            {/* <P>Nossas soluções serão desenvolvidas em linguagens de programação como Python, Node e Typescript, usando frameworks modernos como Next.js.</P> */}
-            <P>
-              Acreditamos que o compartilhamento de conhecimentos e recursos é
-              fundamental para o avanço da saúde em todo o mundo.
-            </P>
-            <P>
-              Nosso objetivo é democratizar o acesso à tecnologia de ponta na
-              área da saúde, permitindo que mais pessoas possam se beneficiar de
-              soluções inovadoras e de alta qualidade.
-            </P>
-            <P>
-              Junte-se a nós nesta jornada emocionante e ajude-nos a criar um
-              futuro mais saudável e conectado.
-            </P>
-          </div>
-          <link-button color="secondary">SAIBA MAIS</link-button>
+
+          <H2 className="pb-10">OpenHeal: Soluções OpenSource para saúde.</H2>
+          <P>
+            A OpenHeal é um projeto inovador e colaborativo que tem como
+            objetivo criar soluções de saúde acessíveis e de alta qualidade por
+            meio de tecnologia opensource.
+          </P>
+          <P>
+            Trabalharemos em varios projetos para fornecer soluções inovadoras
+            em diversas áreas da saúde.
+          </P>
+          {/* <P>Nossas soluções serão desenvolvidas em linguagens de programação como Python, Node e Typescript, usando frameworks modernos como Next.js.</P> */}
+          <P>
+            Acreditamos que o compartilhamento de conhecimentos e recursos é
+            fundamental para o avanço da saúde em todo o mundo.
+          </P>
+          <P>
+            Nosso objetivo é democratizar o acesso à tecnologia de ponta na área
+            da saúde, permitindo que mais pessoas possam se beneficiar de
+            soluções inovadoras e de alta qualidade.
+          </P>
+          <P>
+            Junte-se a nós nesta jornada emocionante e ajude-nos a criar um
+            futuro mais saudável e conectado.
+          </P>
+
+          <RoundButton>Saiba mais</RoundButton>
         </div>
 
         <div className="bg-gray-200 pb-10 ">
-          <div className="mb-8">
-            <H2 className="pt-10">
-              Inteligência Artificial para desburocratizar o atendimento de
-              profissionais de saúde.
-            </H2>
+          <H2 className="pt-10">
+            Inteligência Artificial para desburocratizar o atendimento de
+            profissionais de saúde.
+          </H2>
 
-            <P>
-              Usando frameworks de código aberto, juntamente com várias APIs de
-              inteligência artificial, tanto pagas quanto públicas, podemos
-              alcançar resultados que há alguns anos atrás pareceriam
-              inimagináveis.
-            </P>
-            <P>
-              Essas ferramentas oferecem a oportunidade de explorar e aplicar
-              avanços em aprendizado de máquina e processamento de linguagem
-              natural para resolver problemas do dia a dia.
-            </P>
-            <P>
-              Com a colaboração e a inovação contínuas dessas comunidades,
-              podemos esperar avanços ainda mais surpreendentes no futuro.
-            </P>
-          </div>
+          <P>
+            Usando frameworks de código aberto, juntamente com várias APIs de
+            inteligência artificial, tanto pagas quanto públicas, podemos
+            alcançar resultados que há alguns anos atrás pareceriam
+            inimagináveis.
+          </P>
+          <P>
+            Essas ferramentas oferecem a oportunidade de explorar e aplicar
+            avanços em aprendizado de máquina e processamento de linguagem
+            natural para resolver problemas do dia a dia.
+          </P>
+          <P>
+            Com a colaboração e a inovação contínuas dessas comunidades, podemos
+            esperar avanços ainda mais surpreendentes no futuro.
+          </P>
 
-          <link-button color="secondary">SAIBA MAIS</link-button>
+          <RoundButton>Saiba mais</RoundButton>
         </div>
 
-        <div className="pb-10">
-          <div className="mb-8">
-            <H2 className="pt-10">
-              BlockChain privado: Banco de dados descentralizado e
-              criptografado.
-            </H2>
-            <P>
-              Centrado no paciente, permitirá rodar as informaçõe do lado do
-              cliente evitando demoras em conexões lentas e agilidade no acesso
-              a informações.
-            </P>
-          </div>
-          <link-button color="secondary">SAIBA MAIS</link-button>
+        <div className="pb-24">
+          <H2 className="pt-10">
+            BlockChain privado: Banco de dados descentralizado e criptografado.
+          </H2>
+          <P>
+            Centrado no paciente, permitirá rodar as informaçõe do lado do
+            cliente evitando demoras em conexões lentas e agilidade no acesso a
+            informações.
+          </P>
+          <RoundButton>Saiba mais</RoundButton>
+
         </div>
 
         <div className="bg-gray-200 pb-10 ">
@@ -105,7 +104,9 @@ export default function LandingPage() {
             </strong>
           </P>
         </div>
-        <div className="pb-10">
+
+        <div className="pb-24">
+
           <H2 className="pt-10">InbodyS10 Lab</H2>
           <P>
             Solução para gerarção de relatórios de bioimpedância a partir do
@@ -130,19 +131,14 @@ export default function LandingPage() {
           <P>
             <b>Projeto ainda em fase Lab</b>
           </P>
-          <div
-            className="mt-8"
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              columnGap: "1rem",
-            }}
-          >
+
+          <div className="flex justify-center gap-2">
             <a href="/inbodyS10">
-              <link-button color="secondary">SAIBA MAIS</link-button>
+              <RoundButton>Saiba mais</RoundButton>
             </a>
             <a href="inbodyS10">
-              <link-button color="primary">ACESSAR</link-button>
+              <RoundButton primaryColor={false}>Acessar</RoundButton>
+
             </a>
           </div>
         </div>
