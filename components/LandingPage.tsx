@@ -3,7 +3,9 @@ import H2 from "components/Styling/H2";
 import P from "components/Styling/P";
 import Card from "components/Styling/Card";
 import AdSense from "components/AdSense";
+
 import { RoundButton } from "./round-button/RoundButton.component";
+
 
 export default function LandingPage() {
   return (
@@ -77,6 +79,7 @@ export default function LandingPage() {
             informações.
           </P>
           <RoundButton>Saiba mais</RoundButton>
+
         </div>
 
         <div className="bg-gray-200 pb-10 ">
@@ -101,7 +104,9 @@ export default function LandingPage() {
             </strong>
           </P>
         </div>
+
         <div className="pb-24">
+
           <H2 className="pt-10">InbodyS10 Lab</H2>
           <P>
             Solução para gerarção de relatórios de bioimpedância a partir do
@@ -126,12 +131,14 @@ export default function LandingPage() {
           <P>
             <b>Projeto ainda em fase Lab</b>
           </P>
+
           <div className="flex justify-center gap-2">
             <a href="/inbodyS10">
               <RoundButton>Saiba mais</RoundButton>
             </a>
             <a href="inbodyS10">
               <RoundButton primaryColor={false}>Acessar</RoundButton>
+
             </a>
           </div>
         </div>

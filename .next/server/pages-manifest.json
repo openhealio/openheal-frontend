@@ -1,7 +1,0 @@
-{
-  "/_app": "pages/_app.js",
-  "/_error": "pages/_error.js",
-  "/_document": "pages/_document.js",
-  "/inbodyS10": "pages/inbodyS10.js",
-  "/api/inbodyS10": "pages/api/inbodyS10.js"
-}
