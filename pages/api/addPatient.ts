@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import patients from "lib/db";
+import Patient from "lib/db/patient";
 
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -8,7 +8,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     }
 
-    const patient = patients.addPatient({ name: req.body.name })
+    const service = new Patient()
+
+    const patient = service.addPatient({ name: req.body.name })
     console.log(`New Patient added: ${patient.toString()}`)
     res.end()
     // res.status(200).redirect('/api/patients')

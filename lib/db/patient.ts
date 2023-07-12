@@ -1,7 +1,6 @@
-import Patients from "classes/blockchain/Patients";
+import Patients from 'classes/blockchain/Patients'
 
-
-export default class Db {
+export default class Patient {
     patients: Patients
     constructor() {
         this.patients = new Patients()
@@ -11,5 +10,8 @@ export default class Db {
     }
     async getPatients() {
         return await this.patients.getPatients()
-    }   
+    }
+    async addPatient(patient: Record<string, string | number | boolean>) {
+        console.log(patient)
+    }
 }
