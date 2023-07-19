@@ -16,7 +16,7 @@ export default function LandingPage() {
             <AdSense />
           </Card>
 
-          <H2 className="pb-10">OpenHeal: Soluções OpenSource para saúde.</H2>
+          <H2 className="pb-10">:: OpenHeal: Soluções OpenSource para saúde.</H2>
           <P>
             A OpenHeal é um projeto inovador e colaborativo que tem como
             objetivo criar soluções de saúde acessíveis e de alta qualidade por
