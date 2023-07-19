@@ -1,13 +1,17 @@
-/** @type {import('tailwindcss').Config} */
+/** @type {import("tailwindcss").Config} */
+
 module.exports = {
-  content: ["./pages/**/*.{html,js,ts,tsx}", "./components/**/*.{html,js,ts,tsx}"],
+  content: [
+    "./src/pages/**/*.{html,js,ts,tsx}",
+    "./src/**/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
   theme: {
     fontFamily: {
-      'charter': ['"Charter BT Roman"', 'serif'],
-      'camber': ['Camber Regular', 'sans-serif'],
+      charter: ["Charter BT Roman", "serif"],
+      camber: ["Camber Regular", "sans-serif"],
     },
     extend: {},
   },
 
-  plugins: [require('@tailwindcss/forms')],
-}
+  plugins: [require("@tailwindcss/forms")],
+};
